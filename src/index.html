@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+    <link href="./scss/main.scss" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Epilogue:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="./app.js" defer></script>
+
+    <title>Frontend Mentor | Intro section with dropdown navigation</title>
+  </head>
+  <body>
+    <div class="overlay">
+    <nav>
+      <div class="logo-wrapper"><img src="../images/logo.svg" alt="logo" /></div>
+      <button class="hamburger-container"></button>
+      <div class="menu">
+      <ul class="main-nav-list">
+        <li>
+          Features
+          <div class="arrow"></div>
+          <ul class="second-nav-list" id="features-list">
+            <li><a href="#"><img src="../images/icon-todo.svg" alt="todo" />Todo list</a></li>
+            <li><a href="#">
+              <img src="../images/icon-calendar.svg" alt="calendar" />Calendar</a>
+            </li>
+            <li><a href="#">
+              <img
+                src="../images/icon-reminders.svg"
+                alt="reminders"
+              />Reminders</a>
+            </li>
+            <li><a href="#">
+              <img src="../images/icon-planning.svg" alt="planning" />Planning</a>
+            </li>
+          </ul>
+        </li>
+        <li>
+          Company
+          <div class="arrow"></div>
+          <ul class="second-nav-list" id="company-list">
+            <li><a href="#">History</a></li>
+            <li><a href="#">Our team</a></li>
+            <li><a href="#">Blog</a></li>
+          </ul>
+        </li>
+        <li><a href="#">Careers</a></li>
+        <li><a href="#">About</a></li>
+      </ul>
+      <div class="nav-button-wrapper">
+        <button class="login-button" type="button">Login</button>
+        <button class="register-button" type="button">Register</button>
+      </div>
+    </div>
+    </nav>
+    <main>
+      <div class="main-image-wrapper"></div>
+      <section>
+        <h1>Make remote work</h1>
+        <p>
+          Get your team in sync, no matter your location. Streamline processes,
+          create team rituals, and watch productivity soar.
+        </p>
+        <button class="learn-button">Learn more</button>
+      </section>
+      <div class="logos-container">
+        <img class="logos" src="../images/client-databiz.svg" alt="client databiz logo" />
+        <img class="logos logo-bigger"
+          src="../images/client-audiophile.svg"
+          alt="client audiophile logo"
+        />
+        <img class="logos" src="../images/client-meet.svg" alt="client meet logo" />
+        <img class="logos" src="../images/client-maker.svg" alt="client maker logo" />
+      </div>
+    </main>
+    <footer>
+      <div class="attribution">
+        Challenge by
+        <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+          >Frontend Mentor</a
+        >. Coded by
+        <a href="https://www.frontendmentor.io/profile/k-stopczynska"
+          >k-stopczynska</a
+        >.
+      </div>
+    </footer>
+  </div>
+  </body>
+</html>

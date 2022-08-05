@@ -15,7 +15,8 @@ const menuHandler = () => {
 const submenuHandler = (e) => {
   e.target.nextElementSibling.classList.toggle("active");
   const dropdown = e.target.nextElementSibling.parentNode.nextElementSibling;
-  if (e.target.nextElementSibling === featuresList) {
+  const submenu = e.target.nextElementSibling;
+  if (submenu === featuresList) {
     dropdown.classList.toggle("dropdown");
     dropdown.nextElementSibling.classList.toggle("dropdown");
     dropdown.nextElementSibling.nextElementSibling.classList.toggle("dropdown");
@@ -23,7 +24,7 @@ const submenuHandler = (e) => {
     e.target.classList.toggle("rotate");
   }
 
-  if (e.target.nextElementSibling === companyList) {
+  if (submenu === companyList) {
     dropdown.classList.toggle("dropdown2");
     dropdown.nextElementSibling.classList.toggle("dropdown2");
     buttonWrapper.classList.toggle("dropdown2");

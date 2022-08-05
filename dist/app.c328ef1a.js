@@ -135,8 +135,9 @@ var menuHandler = function menuHandler() {
 var submenuHandler = function submenuHandler(e) {
   e.target.nextElementSibling.classList.toggle("active");
   var dropdown = e.target.nextElementSibling.parentNode.nextElementSibling;
+  var submenu = e.target.nextElementSibling;
 
-  if (e.target.nextElementSibling === featuresList) {
+  if (submenu === featuresList) {
     dropdown.classList.toggle("dropdown");
     dropdown.nextElementSibling.classList.toggle("dropdown");
     dropdown.nextElementSibling.nextElementSibling.classList.toggle("dropdown");
@@ -144,7 +145,7 @@ var submenuHandler = function submenuHandler(e) {
     e.target.classList.toggle("rotate");
   }
 
-  if (e.target.nextElementSibling === companyList) {
+  if (submenu === companyList) {
     dropdown.classList.toggle("dropdown2");
     dropdown.nextElementSibling.classList.toggle("dropdown2");
     buttonWrapper.classList.toggle("dropdown2");

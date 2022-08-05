@@ -118,43 +118,43 @@ parcelRequire = (function (modules, cache, entry, globalName) {
 
   return newRequire;
 })({"app.js":[function(require,module,exports) {
-var hamburger = document.querySelector('.hamburger-container');
-var menu = document.querySelector('.menu');
-var arrows = document.querySelectorAll('.arrow');
-var overlay = document.querySelector('.overlay');
-var buttonWrapper = document.querySelector('.nav-button-wrapper');
-var featuresList = document.querySelector('#features-list');
-var companyList = document.querySelector('#company-list');
+var hamburger = document.querySelector(".hamburger-container");
+var menu = document.querySelector(".menu");
+var arrows = document.querySelectorAll(".arrow");
+var overlay = document.querySelector(".overlay");
+var buttonWrapper = document.querySelector(".nav-button-wrapper");
+var featuresList = document.querySelector("#features-list");
+var companyList = document.querySelector("#company-list");
 
 var menuHandler = function menuHandler() {
-  menu.classList.toggle('active');
-  hamburger.classList.toggle('active');
-  overlay.classList.toggle('active');
+  menu.classList.toggle("active");
+  hamburger.classList.toggle("active");
+  overlay.classList.toggle("active");
 };
 
 var submenuHandler = function submenuHandler(e) {
-  e.target.nextElementSibling.classList.toggle('active');
+  e.target.nextElementSibling.classList.toggle("active");
   var dropdown = e.target.nextElementSibling.parentNode.nextElementSibling;
 
   if (e.target.nextElementSibling === featuresList) {
-    dropdown.classList.toggle('dropdown');
-    dropdown.nextElementSibling.classList.toggle('dropdown');
-    dropdown.nextElementSibling.nextElementSibling.classList.toggle('dropdown');
-    buttonWrapper.classList.toggle('dropdown');
-    e.target.classList.toggle('rotate');
+    dropdown.classList.toggle("dropdown");
+    dropdown.nextElementSibling.classList.toggle("dropdown");
+    dropdown.nextElementSibling.nextElementSibling.classList.toggle("dropdown");
+    buttonWrapper.classList.toggle("dropdown");
+    e.target.classList.toggle("rotate");
   }
 
   if (e.target.nextElementSibling === companyList) {
-    dropdown.classList.toggle('dropdown2');
-    dropdown.nextElementSibling.classList.toggle('dropdown2');
-    buttonWrapper.classList.toggle('dropdown2');
-    e.target.classList.toggle('rotate');
+    dropdown.classList.toggle("dropdown2");
+    dropdown.nextElementSibling.classList.toggle("dropdown2");
+    buttonWrapper.classList.toggle("dropdown2");
+    e.target.classList.toggle("rotate");
   }
 };
 
-hamburger.addEventListener('click', menuHandler);
+hamburger.addEventListener("click", menuHandler);
 arrows.forEach(function (arrow) {
-  return arrow.addEventListener('click', submenuHandler);
+  return arrow.addEventListener("click", submenuHandler);
 });
 },{}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
@@ -184,7 +184,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "49985" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "58253" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

@@ -2,7 +2,7 @@
 
 .overlay {
   background-color: transparent;
-  transition:  all .5s .1s ease-in-out;
+  transition: all 0.5s 0.1s ease-in-out;
 }
 
 .overlay.active {
@@ -30,7 +30,9 @@ nav {
     height: 100vh;
     background-color: $almost-white;
     z-index: 99999;
+    overflow-x: hidden;
     @include md {
+      overflow-x: visible;
       background-color: transparent;
       transform: translate(0px);
       width: 90%;
@@ -85,8 +87,9 @@ nav {
     line-height: 2.5;
   }
 
-  ul, li:hover {
-    cursor:pointer;
+  ul,
+  li:hover {
+    cursor: pointer;
     color: $almost-black;
   }
 
@@ -111,17 +114,17 @@ nav {
     position: absolute;
     transform: translateY(-600px);
     @include md {
-    background-color: white;
-    border: 1px solid $almost-white;
-    border-radius: 8px;
-    box-shadow: 1px 1px 15px 1px $overlay;
-    padding: 1rem 1.5rem 1rem .5rem;
+      background-color: white;
+      border: 1px solid $almost-white;
+      border-radius: 8px;
+      box-shadow: 1px 1px 15px 1px $overlay;
+      padding: 1rem 1.5rem 1rem 0.5rem;
     }
   }
 
   #features-list {
     @include md {
-  left: -20px;
+      left: -20px;
     }
   }
 
@@ -134,7 +137,7 @@ nav {
     transform: translateY(160px);
     transition: transform 0.3s 0.1s ease-in-out;
     @include md {
-transform:none;
+      transform: none;
     }
   }
 
@@ -142,20 +145,18 @@ transform:none;
     transform: translateY(120px);
     transition: transform 0.3s 0.1s ease-in-out;
     @include md {
-      transform:none;
-          }
+      transform: none;
+    }
   }
 
   .dropdown + .dropdown2,
-  .nav-button-wrapper.dropdown.dropdown2{
+  .nav-button-wrapper.dropdown.dropdown2 {
     transform: translateY(280px);
     transition: transform 0.3s 0.1s ease-in-out;
     @include md {
-      transform:none;
-          }
+      transform: none;
+    }
   }
-
-
 
   .arrow {
     height: 10px;
@@ -164,7 +165,7 @@ transform:none;
     background-position: center center;
     padding-left: 1rem;
     display: inline-block;
-    transition: background .3s .1s ease-in-out;
+    transition: background 0.3s 0.1s ease-in-out;
   }
 
   .arrow.rotate {
@@ -261,19 +262,19 @@ button {
   height: 7%;
   padding: 1rem 0.8rem 3rem;
   display: flex;
-  align-items:flex-end;
+  align-items: flex-end;
+  flex-wrap: wrap;
   justify-content: space-between;
   @include md {
-    padding:  0rem 3rem;
+    padding: 0rem 3rem;
     height: 100%;
-    grid-column: 1/3;
   }
   @include lg {
     padding-top: 1rem;
   }
   @include xl {
     grid-column: 1/2;
-    padding:  0rem 3rem;
+    padding: 0rem 3rem;
   }
 
   .logos {

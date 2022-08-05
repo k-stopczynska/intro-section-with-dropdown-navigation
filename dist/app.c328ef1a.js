@@ -120,7 +120,7 @@ parcelRequire = (function (modules, cache, entry, globalName) {
 })({"app.js":[function(require,module,exports) {
 var hamburger = document.querySelector(".hamburger-container");
 var menu = document.querySelector(".menu");
-var arrows = document.querySelectorAll(".arrow");
+var mainNavListItems = document.querySelectorAll(".main-nav-list-item");
 var overlay = document.querySelector(".overlay");
 var buttonWrapper = document.querySelector(".nav-button-wrapper");
 var featuresList = document.querySelector("#features-list");
@@ -133,29 +133,33 @@ var menuHandler = function menuHandler() {
 };
 
 var submenuHandler = function submenuHandler(e) {
-  e.target.nextElementSibling.classList.toggle("active");
-  var dropdown = e.target.nextElementSibling.parentNode.nextElementSibling;
-  var submenu = e.target.nextElementSibling;
+  var dropdown = e.target.nextElementSibling;
+  var submenu = e.target.children[0];
+  submenu.classList.toggle("active");
+  var className;
 
   if (submenu === featuresList) {
-    dropdown.classList.toggle("dropdown");
-    dropdown.nextElementSibling.classList.toggle("dropdown");
-    dropdown.nextElementSibling.nextElementSibling.classList.toggle("dropdown");
-    buttonWrapper.classList.toggle("dropdown");
-    e.target.classList.toggle("rotate");
+    className = "dropdown";
   }
 
   if (submenu === companyList) {
-    dropdown.classList.toggle("dropdown2");
-    dropdown.nextElementSibling.classList.toggle("dropdown2");
-    buttonWrapper.classList.toggle("dropdown2");
-    e.target.classList.toggle("rotate");
+    className = "dropdown2";
   }
+
+  dropdown.classList.toggle(className);
+  dropdown.nextElementSibling.classList.toggle(className);
+
+  if (dropdown.nextElementSibling.nextElementSibling) {
+    dropdown.nextElementSibling.nextElementSibling.classList.toggle(className);
+  }
+
+  buttonWrapper.classList.toggle(className);
+  e.target.classList.toggle("rotate");
 };
 
 hamburger.addEventListener("click", menuHandler);
-arrows.forEach(function (arrow) {
-  return arrow.addEventListener("click", submenuHandler);
+mainNavListItems.forEach(function (mainNavListItem) {
+  return mainNavListItem.addEventListener("click", submenuHandler);
 });
 },{}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];

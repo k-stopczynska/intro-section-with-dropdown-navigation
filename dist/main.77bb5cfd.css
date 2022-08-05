@@ -264,17 +264,37 @@ nav .nav-button-wrapper.dropdown.dropdown2 {
     transform: none;
   }
 }
-nav .arrow {
-  height: 10px;
+nav .main-nav-list-item::after {
+  content: url(/icon-arrow-down.c7e40f0e.svg);
   width: 10px;
-  background: url(/icon-arrow-down.c7e40f0e.svg) no-repeat;
-  background-position: center center;
+  height: 10px;
   padding-left: 1rem;
-  display: inline-block;
-  transition: background 0.3s 0.1s ease-in-out;
+  transition: all 0.3s 0.1s ease-in-out;
 }
-nav .arrow.rotate {
-  background: url(/icon-arrow-up.a3a196fb.svg) no-repeat;
+@keyframes arrowup {
+  0% {
+    content: url(/icon-arrow-down.c7e40f0e.svg);
+    opacity: 1;
+  }
+  25% {
+    content: url(/icon-arrow-down.c7e40f0e.svg);
+    opacity: 0.5;
+  }
+  50% {
+    content: url(/icon-arrow-up.a3a196fb.svg);
+    opacity: 0.5;
+  }
+  75% {
+    content: url(/icon-arrow-up.a3a196fb.svg);
+    opacity: 0.7;
+  }
+  100% {
+    content: url(/icon-arrow-up.a3a196fb.svg);
+    opacity: 1;
+  }
+}
+nav .main-nav-list-item.rotate::after {
+  animation: arrowup 0.8s ease-in-out forwards;
 }
 nav a > img {
   padding-right: 0.8rem;

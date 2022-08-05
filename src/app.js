@@ -1,6 +1,6 @@
 const hamburger = document.querySelector(".hamburger-container");
 const menu = document.querySelector(".menu");
-const arrows = document.querySelectorAll(".arrow");
+const mainNavListItems = document.querySelectorAll(".main-nav-list-item");
 const overlay = document.querySelector(".overlay");
 const buttonWrapper = document.querySelector(".nav-button-wrapper");
 const featuresList = document.querySelector("#features-list");
@@ -13,24 +13,27 @@ const menuHandler = () => {
 };
 
 const submenuHandler = (e) => {
-  e.target.nextElementSibling.classList.toggle("active");
-  const dropdown = e.target.nextElementSibling.parentNode.nextElementSibling;
-  const submenu = e.target.nextElementSibling;
-  if (submenu === featuresList) {
-    dropdown.classList.toggle("dropdown");
-    dropdown.nextElementSibling.classList.toggle("dropdown");
-    dropdown.nextElementSibling.nextElementSibling.classList.toggle("dropdown");
-    buttonWrapper.classList.toggle("dropdown");
-    e.target.classList.toggle("rotate");
-  }
+  const dropdown = e.target.nextElementSibling;
+  const submenu = e.target.children[0];
+  submenu.classList.toggle("active");
 
-  if (submenu === companyList) {
-    dropdown.classList.toggle("dropdown2");
-    dropdown.nextElementSibling.classList.toggle("dropdown2");
-    buttonWrapper.classList.toggle("dropdown2");
-    e.target.classList.toggle("rotate");
+  let className;
+  if (submenu === featuresList) {
+    className = "dropdown";
   }
+  if (submenu === companyList) {
+    className = "dropdown2";
+  }
+  dropdown.classList.toggle(className);
+  dropdown.nextElementSibling.classList.toggle(className);
+  if (dropdown.nextElementSibling.nextElementSibling) {
+    dropdown.nextElementSibling.nextElementSibling.classList.toggle(className);
+  }
+  buttonWrapper.classList.toggle(className);
+  e.target.classList.toggle("rotate");
 };
 
 hamburger.addEventListener("click", menuHandler);
-arrows.forEach((arrow) => arrow.addEventListener("click", submenuHandler));
+mainNavListItems.forEach((mainNavListItem) =>
+  mainNavListItem.addEventListener("click", submenuHandler)
+);
